@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tourism Recommendation System</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">AI Tourism</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#recommend">Recommend</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+</nav>
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h1>Explore the World with AI</h1>
+
+        <p>
+            Get personalized travel recommendations
+            based on your budget, interests and travel duration.
+        </p>
+
+        <a href="#recommend">
+            <button>Plan Your Trip</button>
+        </a>
+
+    </div>
+
+</section>
+
+<section id="recommend" class="recommend-section">
+
+    <h2>Find Your Perfect Destination</h2>
+
+    <!-- FORM CONNECTED TO FLASK -->
+    <form action="/recommend" method="POST">
+
+    <input
+    type="number"
+    name="budget"
+    placeholder="Enter Budget (₹)"
+    required>
+
+    <select name="category" required>
+        <option value="">Select Travel Type</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Beach">Beach</option>
+        <option value="Nature">Nature</option>
+        <option value="Historical">Historical</option>
+        <option value="Religious">Religious</option>
+    </select>
+
+    <input
+    type="number"
+    name="days"
+    placeholder="Number of Days"
+    required>
+
+    <button type="submit">
+        Get Recommendation
+    </button>
+
+
+    </form>
+
+</section>
+
+<section id="features">
+
+    <h2>Why Choose AI Tourism?</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Smart Recommendations</h3>
+            <p>
+                AI analyzes your travel preferences
+                and suggests ideal destinations.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Budget Friendly</h3>
+            <p>
+                Find places that perfectly match
+                your travel budget.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Travel Itinerary</h3>
+            <p>
+                Get a day-wise travel plan
+                for a smooth journey.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="popular">
+
+    <h2>Popular Destinations</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Goa</h3>
+            <p>Beaches, nightlife and adventure.</p>
+        </div>
+
+        <div class="card">
+            <h3>Coorg</h3>
+            <p>Green hills and coffee plantations.</p>
+        </div>
+
+        <div class="card">
+            <h3>Manali</h3>
+            <p>Snowy mountains and trekking.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="about">
+
+    <h2>About Project</h2>
+
+    <p>
+        AI-Powered Tourism Recommendation System
+        helps travelers discover destinations
+        based on budget, interests and duration.
+        The system provides intelligent suggestions
+        and personalized travel planning.
+    </p>
+
+</section>
+
+<footer>
+    <p>
+        © 2026 AI Tourism Recommendation System
+    </p>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

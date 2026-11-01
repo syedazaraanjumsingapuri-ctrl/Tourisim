@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tourism Recommendations</title>
+</head>
+<body>
+
+    <h1>Recommended Destinations</h1>
+
+    {% if places %}
+
+        {% for place in places %}
+
+        <div style="
+        border:1px solid black;
+        padding:20px;
+        margin:20px;
+        border-radius:10px;
+        ">
+
+            <h2>{{ place.place_name }}</h2>
+
+            <p>
+                <strong>Category:</strong>
+                {{ place.category }}
+            </p>
+
+            <p>
+                <strong>Budget:</strong>
+                ₹{{ place.budget }}
+            </p>
+
+            <p>
+                <strong>Days:</strong>
+                {{ place.days }}
+            </p>
+
+            <p>
+                <strong>Season:</strong>
+                {{ place.season }}
+            </p>
+
+            <p>
+                <strong>Description:</strong>
+                {{ place.description }}
+            </p>
+
+            <p>
+                <strong>Score:</strong>
+                {{ place.score }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <h2>No destinations found</h2>
+
+    {% endif %}
+
+</body>
+</html>
